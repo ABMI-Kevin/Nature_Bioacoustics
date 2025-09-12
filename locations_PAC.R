@@ -1,3 +1,6 @@
+remotes::install_github("ABbiodiversity/wildRtrax@development")
+
+
 # Read in locations
 
 # Pacific by main_report for each project
@@ -33,3 +36,5 @@ locations_PAC_boreal <- st_join(recordings_PAC, boreal) %>%
 
 # Combine locations
 locations_boreal <- rbind(locations_ABMI_boreal, locations_PAC_boreal)
+
+reports <- wt_download_report(project_id = 3307, sensor_id = "ARU", reports = c("main", "recording"), weather_cols = FALSE)
